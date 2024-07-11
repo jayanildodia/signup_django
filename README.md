@@ -4,13 +4,13 @@ Django by default provides an authentication system configuration. User objects 
 Modules required: Django install, crispy_forms
 Django Sign Up and Login with Confirmation Email
 
-To install crispy_forms you can use the terminal command:
+## To install crispy_forms you can use the terminal command:
 
 ```
 pip install --upgrade django-crispy-forms
 ```
 
-Start a project with the following command –
+### Start a project with the following command –
 
 ```
 django-admin startproject project
@@ -62,3 +62,31 @@ configure email settings in setting.py:
 
 ![image](https://github.com/jayanildodia/signup_django/assets/32728591/32c1eddd-6cda-483e-a32a-1a6037c66ad7)
 
+place your email and password here.
+
+Edit urls.py file in project
+In this file we provide the path for the login,logout, register page and include the user.urls to the main project URL file:
+
+```
+from django.contrib import admin
+from django.urls import path, include
+from user import views as user_view
+from django.contrib.auth import views as auth
+
+urlpatterns = [
+
+	path('admin/', admin.site.urls),
+
+	##### user related path########################## 
+	path('', include('user.urls')),
+	path('login/', user_view.Login, name ='login'),
+	path('logout/', auth.LogoutView.as_view(template_name ='user/index.html'), name ='logout'),
+	path('register/', user_view.register, name ='register'),
+
+]
+
+```
+
+Edit urls.py in user
+
+Here we provide the URL path for index view and these views are connected to the main project URL file.
