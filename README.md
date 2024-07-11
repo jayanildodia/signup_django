@@ -44,4 +44,7 @@ Goto user/ folder by doing: cd user and create a folder templates with files ind
 
 ![Screenshot-from-2019-07-29-10-03-46](https://github.com/jayanildodia/signup_django/assets/32728591/50250d78-2dea-4ecf-b3f2-9f526266b98f)
 
+Open the project folder using a text editor. The directory structure should look like this :
+
+![image](https://github.com/jayanildodia/signup_django/assets/32728591/40ca736f-ae55-4333-87d3-b2fb8d987b63)
 
